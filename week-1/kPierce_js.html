@@ -1,0 +1,43 @@
+<html lang="en">
+<!--   
+
+Title: WEB231 Discussion 1.1   
+
+Author: Kimberly Pierce   
+
+Date: 26 November 2019   
+
+Modified By: Jeff Shepherd   
+
+Description: JavaScript code with errors   
+
+-->
+
+<head>
+    <title>WEB231 Discussion 1.1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <h1>WEB231 Discussion 1.1 Finding JavaScript Errors</h1>
+
+    <p>If working correctly, this code should display the current date and time.</p>
+
+    <p id="date"></p>
+    <!--The "date" id was missing-->
+
+    <script>
+        var d = new Date().toString(); //variable to create date object. 
+        //the new date constructor without arguments returns the 
+        //current date and time as a date object. Explicitly converted to 
+        //a string.
+
+        document.getElementById("date").innerHTML = d; //method to return the date object        
+        alert(d); //alert date String. The date object will be implicitly converted
+        //to a string. But it's best practice to explicitly convert to the desired type
+        //according to https://2ality.com/2013/04/quirk-implicit-conversion.html.   
+    </script>
+</body>
+
+<html>
