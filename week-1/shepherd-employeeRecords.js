@@ -24,7 +24,7 @@ Employee.prototype.toString = function () {
     var newline = "\n";
     var output = "Name: ".concat(this.fname, " ", this.lname, newline,
         "Address: ", this.address, newline, "Pay rate: $", this.payRate.toFixed(1), newline,
-        "Hire Date: ", this.hireDate.getMonth() + 1, "/", this.hireDate.getDate(), "/", this.hireDate.getFullYear());
+        "Hire Date: ", this.hireDate.toLocaleDateString());
     return output;
 }
 
