@@ -1,6 +1,6 @@
 /*
 ============================================
-; Title:  header.js
+; Title:  shepherd-header.js
 ; Author: Professor Krasso
 ; Date:   3 December 2019
 ; Modified By: Jeff Shepherd
