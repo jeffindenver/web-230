@@ -9,6 +9,9 @@
 ;===========================================
 */
 
+const header = require('../shepherd-header.js');
+console.log(header.display("Jeff", "Shepherd", "Assignment 3.2"));
+
 /**
  * Params: any two
  * Response: true or false

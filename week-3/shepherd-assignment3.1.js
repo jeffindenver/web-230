@@ -11,6 +11,9 @@
 ;===========================================
 */
 
+const header = require('../shepherd-header.js');
+console.log(header.display("Jeff", "Shepherd", "Assignment 3.1"));
+
 /**
  * Params: Number grade between 0-100
  * Response: "A", "B", "C", "D", or "F"
