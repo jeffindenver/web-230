@@ -36,12 +36,12 @@ function logMatch(item1, item2) {
   return item1 + " and " + item2 + " match!";
 }
 
-let itemsList = ["Truck", "Car", "Bike", "Bike", "Four", "Three"];
+let items = ["Truck", "Car", "Bike", "Bike", "Four", "Three"];
 
 for (let i = 0; i < 6; i+=2) {
-  if (match(itemsList[i], itemsList[i+1])) {
-    console.log(logMatch(itemsList[i], itemsList[i+1]));
+  if (match(items[i], items[i+1])) {
+    console.log(logMatch(items[i], items[i+1]));
   } else {
-    console.log(logMismatch(itemsList[i], itemsList[i+1]));
+    console.log(logMismatch(items[i], items[i+1]));
   }
 }
