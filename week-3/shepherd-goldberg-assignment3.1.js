@@ -1,12 +1,14 @@
 /*
 ============================================
-; Title:  shepherd-washington-assignment3.1.js
+; Title:  shepherd-goldberg-assignment3.1.js
 ; Author: Mike Goldberg
 ; Date:   10 December 2019
 ; Modified By: Jeff Shepherd
 ; Description: Correction to Mike's code.
 ;===========================================
 */
+
+"use strict";
 
 const header = require("../shepherd-header.js");
 console.log(header.display("Jeff", "Shepherd", "Assignment 3.1"));
@@ -25,7 +27,7 @@ var ho = " Ho";
 
 function piratesTheme() {
     var song = [];
-    for (i = 0; i < 5; i++){ //JS. Added the missing "+" to the increment operator
+    for (let i = 0; i < 5; i++){ //JS. Added the missing "+" to the increment operator
         if (isOdd(i)) {
             song.push(ho);
         } else if (isEven(i) && i === 4){
