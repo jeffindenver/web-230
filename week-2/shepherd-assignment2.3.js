@@ -7,9 +7,11 @@
 ; Description: demonstrate a 0 parameter function.
 ;===========================================
 */
+"use strict";
 
 const header = require('../shepherd-header.js');
 console.log(header.display("Jeff", "Shepherd", "Assignment 2.3"));
+console.log("");
 
 function myName() {
   return myName.jeff;
@@ -17,5 +19,5 @@ function myName() {
 
 myName.jeff = "Jeff Shepherd";
 
-console.log("");
+
 console.log("Hello " + myName.jeff + "!");

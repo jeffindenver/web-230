@@ -9,6 +9,8 @@
 ;===========================================
 */
 
+"use strict";
+
 /*
   Expected output:
 
@@ -21,6 +23,7 @@
 */
 const header = require('../shepherd-header.js');
 console.log(header.display("Jeff", "Shepherd", "Assignment 3.3"));
+console.log("");
 
 let eventKeyCode = 13
 

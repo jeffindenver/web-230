@@ -8,8 +8,11 @@
 ;===========================================
 */
 
+"use strict";
+
 const header = require('../shepherd-header.js');
 console.log(header.display("Jeff", "Shepherd", "Assignment 3.4"));
+console.log("");
 
 /**
  * Params: any two
@@ -48,8 +51,7 @@ function randomNumber() {
   return Math.floor((Math.random() * 10) + 1)
 }
 
-console.log("\n" +
-  "-- DO THE NUMBERS MATCH GAME --");
+console.log("-- DO THE NUMBERS MATCH GAME --");
 let x = 6;
 for (let i = 0; i < 10; i++) {
   let random = randomNumber();

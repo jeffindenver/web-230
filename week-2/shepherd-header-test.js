@@ -7,6 +7,7 @@
 ; Description: tests the display function
 ;===========================================
 */
+"use strict";
 
 const header = require('../shepherd-header.js');
 

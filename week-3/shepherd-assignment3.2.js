@@ -9,8 +9,11 @@
 ;===========================================
 */
 
+"use strict";
+
 const header = require('../shepherd-header.js');
 console.log(header.display("Jeff", "Shepherd", "Assignment 3.2"));
+console.log("");
 
 /**
  * Params: any two
