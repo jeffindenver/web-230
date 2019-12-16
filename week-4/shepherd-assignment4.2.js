@@ -3,7 +3,7 @@
 ; Title:  shepherd-assignment4.2.js
 ; Author: Professor Krasso
 ; Date:   16 December 2019
-; Modified By:
+; Modified By: Jeff Shepherd
 ; Description: Create and use an array
 ;===========================================
 */

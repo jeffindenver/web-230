@@ -1,7 +1,7 @@
 /*
 ============================================
 ; Title:  shepherd-assignment4.1.js
-; Author: Professor Krasso
+; Author: Jeff Shepherd
 ; Date:   16 December 2019
 ; Modified By:
 ; Description: Find the errors. The expected
