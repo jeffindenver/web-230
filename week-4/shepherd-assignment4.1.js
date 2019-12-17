@@ -18,7 +18,7 @@ console.log("");
 
 /**
  * Params: string and number
- * Response: n/a
+ * Response: a student object
  * Description: Student object constructor
  */
 function Student(name, tuition) {
@@ -65,6 +65,7 @@ let studentNames = ["Dark Helmet", "Lone Star", "Princess Vespa"];
 let tuitionDue = [9000.00, 12000.00, 5000.00];
 
 let studentObjArray = initializeStudents(tuitionDue, studentNames);
+
 let grandTotal = getTotalDue(studentObjArray);
 
 for (let student of studentObjArray) {
