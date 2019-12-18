@@ -12,7 +12,7 @@
 "use strict";
 
 const header = require('../shepherd-header.js');
-console.log(header.display("Jeff", "Shepherd", "Assignment 4.3"));
+console.log(header.display("Jeff", "Shepherd", "Assignment 4.4"));
 console.log("");
 
 /**

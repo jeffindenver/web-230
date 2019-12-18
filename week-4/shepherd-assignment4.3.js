@@ -38,6 +38,3 @@ for (let item of vehicles) {
 
 getValue(vehicles, "Motorcycle");
 getValue(vehicles, "Bus");
-
-
-
