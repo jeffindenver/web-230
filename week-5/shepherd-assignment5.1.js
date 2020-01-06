@@ -67,7 +67,7 @@ function Student(name) {
 /**
  * Params: an array of string
  * Response: an array of student objects
- * Description: Student Constructor
+ * Description: creates an array of Students
  */
 function initializeStudents(anArray) {
   let students = [];
@@ -79,7 +79,7 @@ function initializeStudents(anArray) {
 
 /**
  * Params: two arrays, keys and values
- * Response: a Set
+ * Response: a map
  * Description: returns a map containing names (key)
  * and their true/false enrollment status (value)
  */
