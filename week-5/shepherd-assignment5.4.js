@@ -17,15 +17,15 @@ console.log(header.display("Jeff", "Shepherd", "Assignment 5.4"));
 console.log("");
 
 let composers = initializeComposers();
-let wellRatedComposers = composers.map(item => reduceProperties(item, ["lastName", "rating"]));
-let classicalComposers = composers.map(item => reduceProperties(item, ["lastName", "genre"]));
+let composersByRating = composers.map(item => reduceProperties(item, ["lastName", "rating"]));
+let composersByGenre = composers.map(item => reduceProperties(item, ["lastName", "genre"]));
 
 console.log("-- COMPOSER BY RATING --");
-wellRatedComposers.forEach(item => console.log("Rating: " + item.rating + "\n" +
+composersByRating.forEach(item => console.log("Rating: " + item.rating + "\n" +
   "Composer: " + item.lastName + "\n"));
 
 console.log("-- COMPOSER BY GENRE --");
-classicalComposers.forEach(item => console.log("Genre: " + item.genre + "\n" +
+composersByGenre.forEach(item => console.log("Genre: " + item.genre + "\n" +
   "Composer: " + item.lastName + "\n"));
 
 /**
