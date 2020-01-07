@@ -56,6 +56,12 @@ let composers = [
 console.log("-- COMPOSERS --");
 composers.forEach(item => printComposer(item));
 
+/**
+ * Params: Composer object
+ * Response: output
+ * Description: formats the properties of
+ * a composer object and outputs to console.
+ */
 function printComposer(item) {
   console.log("Last Name: " + item.lastName +
     ", Genre: " + item.genre +
