@@ -32,9 +32,8 @@ composersByGenre.forEach(item => console.log("Genre: " + item.genre + "\n" +
  * Params: an Object and an arg array
  * Response: returns a new object
  * Description: sets the properties of
- * of an object. Can return undefined
- * if none of the arguments match
- * properties of the passed object.
+ * of an object. Can return an empty
+ * object if none of the args match.
  */
 function reduceProperties(anObject, args) {
   let newObject = {};
@@ -53,7 +52,8 @@ function reduceProperties(anObject, args) {
  * several Composer objects.
  */
 function initializeComposers() {
-  return [{
+  return [
+    {
       firstName: "Ludwig",
       lastName: "Beethoven",
       genre: "Classical",
