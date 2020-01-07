@@ -100,6 +100,7 @@ function createMap(keys, values) {
  */
 function print(anIterable, headline) {
   console.log(headline);
+
   if (anIterable instanceof WeakMap) {
     const entries = anIterable.entries();
     for (const item of entries) {
@@ -133,7 +134,7 @@ function report(aMap) {
  */
 function logEnrollmentStatus(value, key) {
   let message = "";
-  if (value === true) {
+  if (value) {
     message = key + " is enrolled in classes.";
   } else {
     message = key + " is too cool for school.";
