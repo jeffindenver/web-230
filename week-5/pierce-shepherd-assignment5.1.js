@@ -12,24 +12,14 @@
 var myMap = new Map();//create new map
 //JS added the "new" keyword
 
-
 //set key value pairs
-
-
 myMap.set ('bigDog', 'Swidgen');
-
 
 myMap.set ('littleDog', 'Molly'); //JS separated the pair with a comma
 
-
 myMap.set ('blackCat', 'Wee');
-
 
 myMap.set ('otherCat', 'Miss Kitty');
 
-
-
 //call value of one pair
-
-
 console.log(myMap.get('bigDog'));
