@@ -57,7 +57,7 @@ function start() {
 
 /**
  * Params: string
- * Response: an array of student objects
+ * Response: a student object
  * Description: Student Constructor
  */
 function Student(name) {
@@ -78,7 +78,7 @@ function initializeStudents(anArray) {
 }
 
 /**
- * Params: two arrays, keys and values
+ * Params: two arrays: keys and values
  * Response: a map
  * Description: returns a map containing names (key)
  * and their true/false enrollment status (value)
