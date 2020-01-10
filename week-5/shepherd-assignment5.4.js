@@ -16,9 +16,9 @@ const header = require('../shepherd-header.js');
 console.log(header.display("Jeff", "Shepherd", "Assignment 5.4"));
 console.log("");
 
-let composers = initializeComposers();
-let composersByRating = composers.map(item => reduceProperties(item, ["lastName", "rating"]));
-let composersByGenre = composers.map(item => reduceProperties(item, ["lastName", "genre"]));
+const composers = initializeComposers();
+const composersByRating = composers.map(item => reduceProperties(item, ["lastName", "rating"]));
+const composersByGenre = composers.map(item => reduceProperties(item, ["lastName", "genre"]));
 
 console.log("-- COMPOSER BY RATING --");
 composersByRating.forEach(item => console.log("Rating: " + item.rating + "\n" +
@@ -42,7 +42,7 @@ function reduceProperties(anObject, args) {
       newObject[arg] = anObject[arg];
     }
   }
-  return newObject;
+  return Object.freeze(newObject);
 }
 
 /**
@@ -53,39 +53,39 @@ function reduceProperties(anObject, args) {
  */
 function initializeComposers() {
   return [
-    {
+    Object.freeze({
       firstName: "Ludwig",
       lastName: "Beethoven",
       genre: "Classical",
       rating: 8
-    },
+    }),
 
-    {
+    Object.freeze({
       firstName: "Wolfgang",
       lastName: "Mozart",
       genre: "Classical",
       rating: 10
-    },
+    }),
 
-    {
+    Object.freeze({
       firstName: "Johann",
       lastName: "Bach",
       genre: "Classical",
       rating: 9
-    },
+    }),
 
-    {
+    Object.freeze({
       firstName: "Joseph",
       lastName: "Haydn",
       genre: "Classical",
       rating: 6
-    },
+    }),
 
-    {
+    Object.freeze({
       firstName: "Franz",
       lastName: "Schubert",
       genre: "Classical",
       rating: 5
-    }
+    })
   ];
 }
