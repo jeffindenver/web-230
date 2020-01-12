@@ -58,6 +58,14 @@ var lastNamesAndGenreObjectArray = composers.map(function (composer) {
      the array that it will eventually return*/
 });
 
+//a more concise way
+let lastNamesAndRatingsObjectArray = composers.map(function(composer) {
+  return   {
+    lastName: composer.lastName,
+    rating: composer.rating
+  }
+});
+
 console.log(lastNames2);
 console.log("");
 //with arrow notation
@@ -70,6 +78,10 @@ lastNamesAndGenreObjectArray.forEach(function(composer) {
   console.log("Genre: " + composer.genre + "\n" +
   "Composer: " + composer.lastName + "\n");
 });
+
+lastNamesAndRatingObjectArray.forEach(composer => console.log(
+  "Rating: " + composer.rating + "\n" +
+  "Composer: " + composer.lastName + "\n"));
 
 /**
  * Params: none
