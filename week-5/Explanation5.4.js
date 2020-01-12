@@ -79,7 +79,7 @@ lastNamesAndGenreObjectArray.forEach(function(composer) {
   "Composer: " + composer.lastName + "\n");
 });
 
-lastNamesAndRatingObjectArray.forEach(composer => console.log(
+lastNamesAndRatingsObjectArray.forEach(composer => console.log(
   "Rating: " + composer.rating + "\n" +
   "Composer: " + composer.lastName + "\n"));
 
