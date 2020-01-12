@@ -28,13 +28,13 @@ var lastNames2 = composers.map(
   /*
     the map function loops through the array on which it was called,
     which in this case is composers. Then it returns a brand new array when finished,
-    which in this case is 'lastNames'.*/
+    which in this case is 'lastNames2'.*/
 
   function (composer)
   /*We tell the map function what to do by passing it a
    function. Here we pass an anonymous / nameless function. The function we pass
    to it should return a single element, which can be a primitive value like
-   string, number, boolean, and undefined. We could also pass a single Object
+   string, number, boolean, and undefined. We could also return a single Object
    like a Composer.
    */
   {
