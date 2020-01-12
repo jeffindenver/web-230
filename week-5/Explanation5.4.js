@@ -60,10 +60,12 @@ var lastNamesAndGenreObjectArray = composers.map(function (composer) {
 
 console.log(lastNames2);
 console.log("");
+//with arrow notation
 lastNamesAndGenreObjectArray.forEach(composer => console.log(
   "Genre: " + composer.genre + "\n" +
   "Composer: " + composer.lastName + "\n"));
 
+//without arrow notation
 lastNamesAndGenreObjectArray.forEach(function(composer) {
   console.log("Genre: " + composer.genre + "\n" +
   "Composer: " + composer.lastName + "\n");
