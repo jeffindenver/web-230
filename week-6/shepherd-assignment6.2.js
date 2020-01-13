@@ -15,6 +15,11 @@ const header = require("../shepherd-header.js");
 console.log(header.display("Jeff", "Shepherd", "Assignment 6.2"));
 console.log("");
 
+const months = ["January", "February", "March", "April",
+  "May", "June", "July", "August",
+  "September", "October", "November", "December"
+];
+
 /**
  * Params: none
  * Response: logs the user selected month
@@ -27,7 +32,7 @@ try {
   if (index < 1 || index > 12) {
     throw "Valid months are 1 to 12."
   }
-  console.log("The selected month is " + months[index]);
+  console.log("The selected month is " + months[index - 1]);
 
 } catch (err) {
   console.log("Catch clause: " + err);
@@ -35,11 +40,6 @@ try {
 } finally {
   console.log("Finally clause reached ...");
 }
-
-const months = ["January", "February", "March", "April",
-  "May", "June", "July", "August",
-  "September", "October", "November", "December"
-];
 
 /**
  * Params: none
