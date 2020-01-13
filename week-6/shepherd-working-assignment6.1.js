@@ -10,6 +10,11 @@
 ;===========================================
 */
 
+"use strict";
+
+const header = require("../shepherd-header.js");
+console.log(header.display("Jeff", "Shepherd", "Assignment 6.1"));
+console.log("");
 /*
  * expected output:
  * John Williams
