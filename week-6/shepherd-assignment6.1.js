@@ -1,12 +1,12 @@
 /*
 ============================================
-; Title:  shepherd-assignment6.2
+; Title:  shepherd-assignment6.1
 ; Author: Jeff Shepherd
 ; Date:   01/13/2020
 ; Modified by:
 ; Description: a program using object
 ; properties with at least 2 errors.
-; This is the working code.
+; This is the non-working code.
 ;===========================================
 */
 
