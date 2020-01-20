@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+ ******************************************************************************
+; Title: shepherd-assignment7.1
+; Author: Jeff Shepherd
+; Date: 01/20/2020
+; Modified by:
+; Description: inline javascript with two js selector errors
+ ******************************************************************************
+-->
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Shepherd assignment 7.1</title>
+  <script>
+    function changeColor(id) {
+      document.body.style.backgroundColor = getRandomColor();
+      try {
+        document.getElementById(id).style.backgroundColor = getRandomColor();
+      } catch (err) {
+        alert("Oops! That didn't work.")
+      }
+    }
+
+    function getRandomColor() {
+      const max = 255;
+      let r = getRandomNumber(max).toString();
+      let g = getRandomNumber(max).toString();
+      let b = getRandomNumber(max).toString();
+      return "rgb(" + r + "," + g + ", " + b + ")";
+    }
+
+    function getRandomNumber(max) {
+      return Math.floor((Math.random() * max) + 1);
+    }
+
+  </script>
+
+  <style>
+    div {
+      height: 400px;
+      min-width: 400px;
+      width: auto;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div id="block1" style="background-color: aqua;">
+    <button type="button" onclick="changeColor('block1')">change color</button>
+    <button type="button" onclick="changeColor(this.parentElement.id)">Test Button</button>
+  </div>
+
+  <div id="block2" style="background-color: blanchedalmond;">
+    <button type="button" onclick="changeColor('block2')">change color</button>
+  </div>
+
+</body>
+
+</html>
