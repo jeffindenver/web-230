@@ -15,6 +15,12 @@
   <meta charset="UTF-8">
   <title>Shepherd assignment 7.1</title>
   <script>
+    /*
+    * params: element id
+    * response: changes the color of an element and the body
+    * description: changes background color of the element whose
+    * id is passed to the function.
+    */
     function changeColor(id) {
       document.body.style.backgroundColor = getRandomColor();
       try {
@@ -24,6 +30,12 @@
       }
     }
 
+    /*
+    * params: none
+    * response: returns a string formatted as an css rgb value
+    * description: generates a rgb color value and formats
+    * for use as a valid style color.
+    */
     function getRandomColor() {
       const max = 255;
       let r = getRandomNumber(max).toString();
@@ -32,6 +44,12 @@
       return "rgb(" + r + "," + g + ", " + b + ")";
     }
 
+    /*
+    * params: integer
+    * response: returns a number between 0 and the argument
+    * description: generates random number with a max
+    * value specified.
+    */
     function getRandomNumber(max) {
       return Math.floor((Math.random() * max) + 1);
     }
