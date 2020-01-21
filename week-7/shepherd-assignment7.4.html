@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+ ******************************************************************************
+; Title: shepherd-assignment7.4
+; Author: Jeff Shepherd
+; Date: 01/21/2020
+; Modified by:
+; Description: create table with edit and delete functions
+ ******************************************************************************
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Shepherd Assignment 7.3</title>
+  <link rel="stylesheet" href="../site.css">
+</head>
+
+<body>
+  <div id="componentTableContainer"></div>
+
+</body>
+<script>
+  const components = getData();
+
+  document.getElementById("componentTableContainer").innerHTML +=
+    "<h1>Computer Components</h1>" +
+    "<table>" +
+    "<thead>" +
+    "<tr><th>Id</th><th>Name</th><th>Amount</th><th>Functions</th></tr>" +
+    "</thead>" +
+    "<tbody id='tableBody'></tbody>" +
+    "</table>";
+
+  components.forEach(item =>
+    document.getElementById("tableBody").insertAdjacentHTML("beforeend",
+      "<tr>" +
+      "<td>" + item.id + "</td><td>" + item.name + "</td>" +
+      "<td>" + formatNumber(item.amount.toFixed(2)) + "</td>" +
+      "<td>" +
+      "<a href='javascript:alert(\"1\");'>EDIT</a>" +
+      " | " +
+      "<a href='javascript:confirm(\"Are you sure?\");'>DELETE</a>" +
+      "</td>" +
+      "</tr>"));
+
+  /*
+   * params: number as a string
+   * response: string of a number formatted with a comma
+   * description: adds a comma after the thousands place.
+   */
+  function formatNumber(aNumber) {
+    //better way to do this would be to insert a comma after every
+    //third element of after the decimal. Reverse the string,
+    //skip the first group of three, thereafter, insert comma after
+    //every third element, reverse string again.
+    let numArray = aNumber.split("");
+    let formattedNum;
+    if (numArray.length > 6) {
+      formattedNum = numArray[0] + ",";
+      for (let i = 1; i < numArray.length; i++) {
+        formattedNum += numArray[i];
+      }
+    } else {
+      formattedNum = aNumber;
+    }
+    return formattedNum;
+  }
+
+  /*
+   * params: none
+   * response: objects with id, name, and amount properties
+   * description: returns an array of objects.
+   */
+  function getData() {
+    return [{
+        id: 1,
+        name: "Laptop",
+        amount: 1500.99
+      },
+      {
+        id: 2,
+        name: "Motherboard",
+        amount: 35.70
+      },
+      {
+        id: 3,
+        name: "Monitor",
+        amount: 174.99
+      },
+      {
+        id: 4,
+        name: "Mouse",
+        amount: 13.99
+      },
+      {
+        id: 5,
+        name: "Keyboard",
+        amount: 14.50
+      }
+    ];
+  }
+
+</script>
+
+</html>
