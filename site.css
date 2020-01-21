@@ -1,0 +1,9 @@
+th {
+    color: white;
+    background-color: steelblue;
+    text-align: left;
+}
+th,tr {
+    padding: 8px;
+}
+tr:nth-child(odd) {background-color: lightsteelblue;}

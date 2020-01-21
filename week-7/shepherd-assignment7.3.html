@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+ ******************************************************************************
+; Title: shepherd-assignment7.3
+; Author: Jeff Shepherd
+; Date: 01/21/2020
+; Modified by:
+; Description: use innerHTML document.write
+ ******************************************************************************
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shepherd Assignment 7.3</title>
+    <link rel="stylesheet" href="site.css">
+    <!--Put link to style sheet here-->
+    <script>
+      document.write("<div>" +
+        "<h1>SHOPPING LIST v.1</h1>" +
+        "<ol>" +
+            "<li>Oranges</li>" +
+            "<li>Apples</li>" +
+            "<li>Pears</li>" +
+            "<li>Limes</li>" +
+            "<li>Lemons</li>" +
+        "</ol>" +
+        "</div>");
+    </script>
+</head>
+
+<body>
+
+    <div id="list"></div>
+    <script>
+      document.getElementById("list").innerHTML = "<h1>SHOPPING LIST v.2</h1>" +
+        "<table>" +
+          "<tr>" +
+            "<th>Id</th>" +
+            "<th>Item</th>" +
+          "</tr>" +
+          "<tr>" +
+              "<td>1</td>" +
+              "<td>Oranges</td>"+
+              "</tr>" +
+          "<tr>" +
+              "<td>2</td>" +
+              "<td>Apples</td>" +
+          "</tr>" +
+          "<tr>" +
+              "<td>3</td>" +
+              "<td>Pears</td>" +
+          "</tr>" +
+          "<tr>" +
+            "<td>4</td>" +
+            "<td>Limes</td>" +
+            "</tr>" +
+          "<tr>" +
+            "<td>5</td>" +
+            "<td>Lemons</td>" +
+          "</tr>"
+    </script>
+</body>
+
+</html>
