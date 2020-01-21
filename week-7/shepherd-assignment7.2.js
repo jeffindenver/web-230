@@ -4,9 +4,8 @@
 ; Author: Jeff Shepherd
 ; Date:   01/21/2020
 ; Modified by:
-; Description: a program using object
-; properties with at least 2 errors.
-; This is the working code.
+; Description: use a constructor and log
+; results.
 ;===========================================
 */
 
