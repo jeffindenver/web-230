@@ -12,7 +12,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Shepherd Assignment 7.3</title>
+  <title>Shepherd Assignment 7.4</title>
   <link rel="stylesheet" href="../site.css">
 </head>
 
@@ -23,49 +23,47 @@
 <script>
   const components = getData();
 
-  document.getElementById("componentTableContainer").innerHTML +=
-    "<h1>Computer Components</h1>" +
-    "<table>" +
-    "<thead>" +
-    "<tr><th>Id</th><th>Name</th><th>Amount</th><th>Functions</th></tr>" +
-    "</thead>" +
-    "<tbody id='tableBody'></tbody>" +
-    "</table>";
+  document.getElementById("componentTableContainer").innerHTML =
+    `<h1>Computer Components</h1>
+     <table>
+       <thead>
+         <tr>
+           <th>ID</th>
+           <th>Name</th>
+           <th>Amount</th>
+           <th>Functions</th>
+         </tr>
+       </thead>
+       <tbody id='tableBody'></tbody>
+     </table>`;
 
+  //I <3 template literals
   components.forEach(item =>
     document.getElementById("tableBody").insertAdjacentHTML("beforeend",
-      "<tr>" +
-      "<td>" + item.id + "</td><td>" + item.name + "</td>" +
-      "<td>" + formatNumber(item.amount.toFixed(2)) + "</td>" +
-      "<td>" +
-      "<a href='javascript:alert(\"1\");'>EDIT</a>" +
-      " | " +
-      "<a href='javascript:confirm(\"Are you sure?\");'>DELETE</a>" +
-      "</td>" +
-      "</tr>"));
+      `<tr>
+          <td> ${item.id.toString()} </td>
+          <td> ${item.name} </td>
+          <td> ${formatNumber(item.amount.toFixed(2))} </td>
+          <td> <a href='javascript:alert("${item.id.toString()}");'>EDIT</a>
+             | <a href='javascript:confirm("Are you sure?");'>DELETE</a></td>
+          </tr>`));
 
-  /*
+   /*
    * params: number as a string
-   * response: string of a number formatted with a comma
+   * response: string of a number formatted with commas
    * description: adds a comma after the thousands place.
    */
-  function formatNumber(aNumber) {
-    //better way to do this would be to insert a comma after every
-    //third element of after the decimal. Reverse the string,
-    //skip the first group of three, thereafter, insert comma after
-    //every third element, reverse string again.
-    let numArray = aNumber.split("");
-    let formattedNum;
-    if (numArray.length > 6) {
-      formattedNum = numArray[0] + ",";
-      for (let i = 1; i < numArray.length; i++) {
-        formattedNum += numArray[i];
+    function formatNumber(aNumber) {
+      let reversed = aNumber.split("").reverse();
+      let reversedWithCommas = reversed.slice(0, 3);//source array unchanged
+      for(let i = 3; i < reversed.length; i++) {
+        if (i !== 3 && i % 3 === 0) {
+          reversedWithCommas.push(",");
+        }
+        reversedWithCommas.push(reversed[i]);
       }
-    } else {
-      formattedNum = aNumber;
+      return reversedWithCommas.reverse().join("");
     }
-    return formattedNum;
-  }
 
   /*
    * params: none
