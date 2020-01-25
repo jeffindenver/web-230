@@ -45,24 +45,24 @@
           <td> ${formatNumber(item.amount.toFixed(2))} </td>
           <td> <a href='javascript:alert("${item.id.toString()}");'>EDIT</a>
              | <a href='javascript:confirm("Are you sure?");'>DELETE</a></td>
-          </tr>`));
+      </tr>`));
 
-   /*
+  /*
    * params: number as a string
    * response: string of a number formatted with commas
    * description: adds a comma after the thousands place.
    */
-    function formatNumber(aNumber) {
-      let reversed = aNumber.split("").reverse();
-      let reversedWithCommas = reversed.slice(0, 3);//source array unchanged
-      for(let i = 3; i < reversed.length; i++) {
-        if (i !== 3 && i % 3 === 0) {
-          reversedWithCommas.push(",");
-        }
-        reversedWithCommas.push(reversed[i]);
+  function formatNumber(aNumber) {
+    let reversed = aNumber.split("").reverse();
+    let reversedWithCommas = reversed.slice(0, 3); //source array unchanged
+    for (let i = 3; i < reversed.length; i++) {
+      if (i !== 3 && i % 3 === 0) {
+        reversedWithCommas.push(",");
       }
-      return reversedWithCommas.reverse().join("");
+      reversedWithCommas.push(reversed[i]);
     }
+    return reversedWithCommas.reverse().join("");
+  }
 
   /*
    * params: none
