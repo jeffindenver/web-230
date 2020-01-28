@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--
+ ******************************************************************************
+; Title: shepherd-assignment8.1
+; Author: Jeff Shepherd
+; Date: 01/28/2020
+; Modified by:
+; Description: jquery with 2 errors
+ ******************************************************************************
+-->
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Shepherd assignment 8.1</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <style>
+    div {
+      height: 200px;
+      width: auto;
+      min-width: 200px;
+    }
+
+    body {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    #buttonsContainer {
+      display: flex;
+      flex-flow: column nowrap;
+      background-color: lightblue;
+      justify-content: space-around;
+    }
+
+    button {
+      width: 100px;
+      margin: auto;
+    }
+
+  </style>
+</head>
+
+<body id="main">
+
+  <script>
+    const reds = Object.freeze(new ColorSet([200, 255], [0, 100], [0, 100]));
+    const blues = Object.freeze(new ColorSet([0, 100], [0, 100], [200, 255]));
+    const randomColors = Object.freeze(new ColorSet([0, 255], [0, 255], [0, 255]));
+    const numberOfSquares = 53;
+
+    buildScene(numberOfSquares);
+
+    /*
+     * params: integer
+     * response: adds elements to the html
+     * description: adds a variable number of divs
+     * and two buttons.
+     */
+    function buildScene(amount) {
+      insertDivs(amount);
+      insertButtons();
+    }
+
+    /*
+     * params: integer
+     * response: inserts divs
+     * description: insets divs with random
+     * background colors
+     */
+    function insertDivs(amount) {
+      for (let i = 0; i < amount; i++) {
+        document.getElementById("main").insertAdjacentHTML("beforeend",
+          `<div style="background-color:
+          ${getColor(randomColors)}"></div> `
+        );
+      }
+    }
+
+    /*
+     * params: none
+     * response: inserts two buttons
+     * description: inserts two buttons, each with unique id
+     */
+    function insertButtons() {
+      document.getElementById("main").insertAdjacentHTML("afterbegin",
+        `<div id="buttonsContainer">
+          <button id="redButton" type="button">Red Colors</button>
+          <button id="blueButton" type="button">Blue Colors</button>
+        </div>`);
+    }
+
+    /*
+     * params: ColorSet object
+     * response: returns a string formatted as an css rgb value
+     * description: generates a rgb color value and formats
+     * for use as a valid style color.
+     */
+    function getColor(colorSet) {
+      r = getRandomNumber(colorSet.red);
+      g = getRandomNumber(colorSet.green);
+      b = getRandomNumber(colorSet.blue);
+      return "rgb(" + r + "," + g + ", " + b + ")";
+    }
+
+    /*
+     * params: a two element array with two integers
+     * response: returns a number between min and max
+     * description: generates random number in a range
+     * attribution: adjusted from code found on includehelp.com
+     */
+    function getRandomNumber(range) {
+      let max = range[1];
+      let min = range[0];
+      let diff = max - min;
+      return Math.floor((Math.random() * diff) + min);
+    }
+
+    /*
+     * params: three 2-element arrays
+     * response: returns a colorSet object
+     * description: color set constructor
+     */
+    function ColorSet(r, g, b) {
+      this.red = r;
+      this.green = g;
+      this.blue = b;
+    }
+
+    /*
+     * params: none
+     * response: changes background color of the elements
+     * description: jquery functions that change background
+     * colors. Big hint: three similar jquery functions but only
+     * one of them works.
+     */
+    $(function () {
+
+      //when one of the color squares is clicked, the background color changes
+      $("div").click(() => {
+        $(this).css("background-color", getColor(randomColors));
+      });
+
+      //when the 'red' button is clicked, changes all divs to a reddish color
+      $("#redButton").click(function () {
+        $("div").each(() => {
+          $(this).css("background-color", getColor(reds));
+        });
+      });
+
+      //when the 'blue' button is clicked, changes all divs to a bluish color
+      $("#blueButton").click(function () {
+        $("div").each(function () {
+          $(this).css("background-color", getColor(blues));
+        });
+      });
+
+    });
+
+  </script>
+</body>
+
+</html>
