@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+ ******************************************************************************
+; Title: shepherd-assignment8.1
+; Author: Jeff Shepherd
+; Date: 01/28/2020
+; Modified by:
+; Description: jquery with 2 errors
+ ******************************************************************************
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 8.2</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+    body {
+      font-family: "Roboto", sans-serif;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    div {
+      display: block;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div id="fruits"></div>
+
+  <script>
+    let navBar = document.createElement("nav");
+    document.body.insertAdjacentElement("afterbegin", navBar);
+    navBar.style.marginBottom = "20px";
+    navBar.style.backgroundColor = "lightblue";
+    navBar.style.width = "100%";
+    navBar.style.height = "40px";
+
+    let fruits = getData();
+    let out = buildOutputHtml(fruits);
+
+    let theMainDiv = document.getElementById("fruits");
+
+    theMainDiv.innerHTML = out;
+
+    theMainDiv.insertAdjacentHTML("afterbegin",
+      "<h1>List of Fruit</h1>");
+
+    document.getElementById("theList").style.margin = "0 auto";
+
+    function buildOutputHtml(fruits) {
+      let output = "<ul id='theList'>";
+      for (let i = 0; i < fruits.length; i++) {
+        output += `<li>ID: ${fruits[i].id} Type: ${fruits[i].type}</li>`;
+      }
+      output += "</ul>";
+      return output;
+    }
+
+    function getData() {
+      return [{
+          id: 101,
+          type: "apple"
+        },
+        {
+          id: 102,
+          type: "orange"
+        },
+        {
+          id: 103,
+          type: "banana"
+        },
+        {
+          id: 104,
+          type: "pear"
+        },
+        {
+          id: 105,
+          type: "pineapple"
+        }
+      ];
+    }
+
+
+    /*
+     * params: integer
+     * response: adds elements to the html
+     * description: adds a variable number of divs
+     * and two buttons.
+     */
+
+  </script>
+
+</body>
+
+</html>
