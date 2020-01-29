@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--
+ ******************************************************************************
+; Title: shepherd-assignment8.3
+; Author: Jeff Shepherd
+; Date: 01/29/2020
+; Modified by:
+; Description: use jquery
+ ******************************************************************************
+-->
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Exercise 8.3</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="../site.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+    body {
+      font-family: "Roboto", sans-serif;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    let navBar = document.createElement("nav");
+    document.body.insertAdjacentElement("afterbegin", navBar);
+    navBar.style.marginBottom = "20px";
+    navBar.style.backgroundColor = "lightblue";
+    navBar.style.width = "100%";
+    navBar.style.height = "40px";
+
+    let loremIpsum = document.createElement("p");
+    document.body.insertAdjacentHTML("beforeend", "<h1>Lorem Ipsum</h1>");
+    document.body.insertAdjacentElement("beforeend", loremIpsum);
+    document.body.insertAdjacentHTML("beforeend", `<button type="button">Toggle</button> `);
+
+    loremIpsum.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+    Fusce sodales sem in elit mattis, non tincidunt magna porta. Cras sed maximus \
+    purus. Aliquam erat volutpat. Vivamus et ex nunc. Etiam in commodo neque. Sed \
+    nec tortor finibus nisi vehicula tempus vel luctus nulla. Proin ac sem ligula.";
+
+    loremIpsum.style.backgroundColor = "lightblue";
+
+    let fruitTable = document.createElement("table");
+    let fruits = getData();
+
+    fruitTable.insertAdjacentHTML("afterbegin",
+      `<tr>
+        <th>ID</th>
+        <th>Type</th>
+      </tr> `);
+
+    fruits.forEach(item => {
+      fruitTable.insertAdjacentHTML("beforeend",
+        `<tr>
+           <td class="idField">${item.id}</td><td class="typeField">${item.type}</td>
+         </tr>`)
+    });
+
+    document.body.appendChild(fruitTable);
+
+    function getData() {
+      return [{
+          id: 101,
+          type: "apple"
+        },
+        {
+          id: 102,
+          type: "orange"
+        },
+        {
+          id: 103,
+          type: "banana"
+        },
+        {
+          id: 104,
+          type: "pear"
+        },
+        {
+          id: 105,
+          type: "pineapple"
+        }
+      ];
+    }
+
+    /*
+     * params: none
+     * response: jquery event function
+     * description: registers events using jquery
+     */
+    $(function () {
+
+      $("tr").each(function(index) {
+        if(index % 2 === 0) {
+          $(this).css('background-color', 'white');
+        }
+      });
+
+      $("button").click(function () {
+        $("p").toggle();
+      });
+
+      $(".idField").click(function() {
+        alert($(this).text());
+      });
+
+      $(".typeField").click(function() {
+        alert($(this).text());
+      });
+
+    });
+  </script>
+
+</body>
+
+</html>
