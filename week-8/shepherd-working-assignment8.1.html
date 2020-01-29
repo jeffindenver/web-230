@@ -49,7 +49,8 @@
     const reds = Object.freeze(new ColorSet([200, 255], [0, 100], [0, 100]));
     const blues = Object.freeze(new ColorSet([0, 100], [0, 100], [200, 255]));
     const randomColors = Object.freeze(new ColorSet([0, 255], [0, 255], [0, 255]));
-    const numberOfSquares = 53;
+
+    const numberOfSquares = 52;
 
     buildScene(numberOfSquares);
 
@@ -72,7 +73,7 @@
      */
     function addDivs(amount) {
       for (let i = 0; i < amount; i++) {
-        document.getElementById("main").insertAdjacentHTML("beforeend",
+        document.getElementById("main").insertAdjacentHTML("afterbegin",
           `<div style="background-color:
           ${getColor(randomColors)}"></div> `
         );
@@ -87,8 +88,8 @@
     function addButtons() {
       document.getElementById("main").insertAdjacentHTML("afterbegin",
         `<div id="buttonsContainer">
-          <button id="redButton" type="button">Red Colors</button>
-          <button id="blueButton" type="button">Blue Colors</button>
+        <button id="redButton" type="button">Red Colors</button>
+        <button id="blueButton" type="button">Blue Colors</button>
         </div>`);
     }
 
