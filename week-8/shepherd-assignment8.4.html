@@ -102,7 +102,7 @@
     }
 
     /*
-     * params: args array with int, string, string, string
+     * params: args array with 4 strings
      * response: returns an Employee object
      * description: creates Employee object from an array
      * of arguments
@@ -116,7 +116,7 @@
 
     //Overrides the default toString method
     Employee.prototype.toString = function () {
-      return `${this.id.toString()} ${this.firstName} ${this.lastName} ${this.title}`;
+      return `${this.id} ${this.firstName} ${this.lastName} ${this.title}`;
     }
 
     /*
