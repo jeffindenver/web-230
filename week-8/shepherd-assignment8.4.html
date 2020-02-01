@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--
+ ******************************************************************************
+; Title: shepherd-assignment8.4
+; Author: Jeff Shepherd
+; Date: 01/29/2020
+; Modified by:
+; Description: pulling it all together
+ ******************************************************************************
+-->
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Exercise 8.4</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="../site.css">
+  <style>
+    #emps tbody tr:hover {
+      cursor: pointer;
+      background-color: #ffff99;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div id="emps"></div>
+
+  <script>
+    const employees = getData();
+    document.getElementById("emps").innerHTML = buildOutput(employees);
+
+    /*
+     * params: none
+     * response: returns a string of html
+     * description: builds an html table of employees
+     */
+    function buildOutput(employees) {
+      let output =
+        `<table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Title</th>
+          </tr>
+        </thead>
+      <tbody>`;
+
+      employees.forEach(item => {
+        output +=
+          `<tr>
+            <td>${item.id}</td>
+            <td>${item.firstName}</td>
+            <td>${item.lastName}</td>
+            <td>${item.title}</td>
+          </tr>`
+      });
+      output += "</tbody>";
+      return output;
+    }
+
+    /*
+     * params: integer
+     * response: returns an Employee object
+     * description: finds the first employee object
+     * with an id property that matches the argument
+     */
+    function getEmployee(id) {
+      for (let item of employees) {
+        if (item.id === id) {
+          return item;
+        }
+      }
+      return "No employee found";
+    }
+
+    /*
+     * params: none
+     * response: returns an array of Employee Objects
+     * description: creates Employees and returns them
+     * in an array.
+     */
+    function getData() {
+      data = [
+        ["1", "Thomas", "Edison", "Software Engineer"],
+        ["2", "Benjamin", "Franklin", "Programmer"],
+        ["3", "Nikola", "Tesla", "Project Manager"],
+        ["4", "Charles", "Babbage", "Product Manager"],
+        ["5", "Alexander", "Bell", "Business Analyst"]
+      ];
+
+      return data.map(item => {
+        return Object.freeze(new Employee(item));
+      });
+    }
+
+    /*
+     * params: args array with int, string, string, string
+     * response: returns an Employee object
+     * description: creates Employee object from an array
+     * of arguments
+     */
+    function Employee(args) {
+      this.id = args[0];
+      this.firstName = args[1];
+      this.lastName = args[2];
+      this.title = args[3];
+    }
+
+    //Overrides the default toString method
+    Employee.prototype.toString = function () {
+      return `${this.id.toString()} ${this.firstName} ${this.lastName} ${this.title}`;
+    }
+
+    /*
+     * params: none
+     * response: jquery event functions
+     * description: registers events using jquery
+     */
+    $(function () {
+
+      $("table tr").click(function () {
+        let id = $(this).find("td:first").html();
+        alert(getEmployee(id));
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>
